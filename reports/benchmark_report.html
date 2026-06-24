@@ -1,0 +1,78 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Multi-Agent Benchmark Report</title><style>:root{--bg:#0f172a;--fg:#e2e8f0;--mut:#94a3b8;--card:#1e293b;--line:#334155}
+*{box-sizing:border-box}
+body{font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;margin:0;background:var(--bg);
+color:var(--fg);line-height:1.5}
+.wrap{max-width:920px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+header{background:linear-gradient(120deg,#6366f1,#0ea5e9);padding:2.5rem 1.25rem;color:#fff}
+header .inner{max-width:920px;margin:0 auto}
+header h1{margin:0 0 .35rem;font-size:1.7rem}
+header p{margin:0;opacity:.92}
+h2{font-size:1.25rem;margin:2.2rem 0 .8rem;border-bottom:1px solid var(--line);padding-bottom:.4rem}
+h4{margin:1.2rem 0 .5rem;color:var(--mut);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.2rem}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--c);
+border-radius:12px;padding:1.1rem 1.2rem}
+.card h3{margin:0 0 .9rem;font-size:1.05rem;color:var(--c)}
+.stat{display:flex;justify-content:space-between;align-items:baseline;padding:.3rem 0;
+border-bottom:1px dashed var(--line)}
+.stat span{font-weight:700;font-size:1.1rem;font-variant-numeric:tabular-nums}
+.stat label{color:var(--mut);font-size:.8rem}
+.notes{margin:.8rem 0 0;color:var(--mut);font-size:.8rem}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+.chip{background:color-mix(in srgb,var(--c) 22%,transparent);color:var(--c);
+border:1px solid var(--c);border-radius:999px;padding:.25rem .8rem;font-weight:600;font-size:.85rem}
+.arrow{color:var(--mut)}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline li{display:flex;gap:.85rem;padding:.5rem 0;position:relative}
+.timeline li::before{content:"";position:absolute;left:5px;top:1.4rem;bottom:-.5rem;width:2px;
+background:var(--line)}
+.timeline li:last-child::before{display:none}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--c);margin-top:.35rem;flex:none;
+box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 25%,transparent)}
+.payload{color:var(--mut);font-size:.82rem;font-family:ui-monospace,monospace}
+details{margin-top:1rem;background:var(--card);border:1px solid var(--line);border-radius:10px;
+padding:.6rem .9rem}
+summary{cursor:pointer;color:var(--mut);font-size:.85rem}
+pre{white-space:pre-wrap;margin:.7rem 0 0;font-size:.82rem;color:var(--fg)}
+.muted{color:var(--mut)}
+.badges{margin:1rem 0 0}
+.badge{display:inline-block;padding:.3rem .7rem;border-radius:999px;font-size:.78rem;font-weight:700;
+letter-spacing:.03em}
+.badge.live{background:rgba(16,185,129,.18);color:#34d399;border:1px solid #10b981}
+.badge.synth{background:rgba(245,158,11,.16);color:#fbbf24;border:1px solid #f59e0b}
+table.cmp{width:100%;border-collapse:collapse;margin:.8rem 0;font-size:.88rem}
+table.cmp th,table.cmp td{padding:.5rem .7rem;border-bottom:1px solid var(--line);text-align:right;
+font-variant-numeric:tabular-nums}
+table.cmp thead th{text-align:right;color:var(--mut);font-size:.78rem;text-transform:uppercase;
+letter-spacing:.04em;border-bottom:2px solid var(--line)}
+table.cmp tbody th{text-align:left;font-weight:600;color:var(--fg)}
+table.cmp tbody th small{color:var(--mut);font-weight:400}
+table.cmp thead th:first-child{text-align:left}
+table.cmp td.win{background:rgba(16,185,129,.16);color:#34d399;font-weight:700;border-radius:4px}
+table.cmp td.delta{color:var(--mut);font-size:.82rem}
+table.cmp td.delta.up{color:#34d399}
+table.cmp td.delta.down{color:#f87171}
+table.cmp tbody tr:hover{background:rgba(255,255,255,.03)}</style></head><body><header><div class='inner'><h1>Multi-Agent Research Benchmark</h1><p>Research GraphRAG state-of-the-art and write a 500-word summary</p></div></header><div class='wrap'><h2>Single-agent vs Multi-agent</h2><div class='cards'><div class="card" style="--c:#8b5cf6"><h3>single_agent</h3><div class="stat"><span>0.000s</span><label>latency</label></div><div class="stat"><span>$0.00002</span><label>est. cost</label></div><div class="stat"><span>5.4/10</span><label>quality</label></div><p class="notes">agents=1 citation_coverage=n/a failed=False</p></div><div class="card" style="--c:#10b981"><h3>multi_agent</h3><div class="stat"><span>0.000s</span><label>latency</label></div><div class="stat"><span>$0.00047</span><label>est. cost</label></div><div class="stat"><span>10.0/10</span><label>quality</label></div><p class="notes">agents=3 citation_coverage=1.0 failed=False</p></div></div><h2>Full metric comparison</h2><p class='muted'>Green cell = better for that metric. &Delta; is multi-agent minus single-agent.</p><table class="cmp"><thead><tr><th>Metric</th><th>single_agent</th><th>multi_agent</th><th>&Delta; (B&minus;A)</th></tr></thead><tbody><tr><th>Latency <small>(s)</small></th><td>0.00&nbsp;s</td><td>0.00&nbsp;s</td><td class="delta ">0&nbsp;s</td></tr><tr><th>Total tokens</th><td class="win">54</td><td>1,244</td><td class="delta down">+1,190</td></tr><tr><th>Input tokens</th><td class="win">27</td><td>622</td><td class="delta down">+595</td></tr><tr><th>Output tokens</th><td class="win">27</td><td>622</td><td class="delta down">+595</td></tr><tr><th>Est. cost</th><td class="win">$0.00002</td><td>$0.000467</td><td class="delta down">+$0.000447</td></tr><tr><th>Cost / 1k tokens</th><td class="win">$0.00037</td><td>$0.000375</td><td class="delta down">+$0.000005</td></tr><tr><th>Throughput <small>(tok/s)</small></th><td>866,315&nbsp;tok/s</td><td class="win">11,913,884.40&nbsp;tok/s</td><td class="delta up">+11,047,569.40&nbsp;tok/s</td></tr><tr><th>Agent steps</th><td>1</td><td>3</td><td class="delta ">+2</td></tr><tr><th>Supervisor iters</th><td>1</td><td>4</td><td class="delta ">+3</td></tr><tr><th>Sources used</th><td>0</td><td class="win">5</td><td class="delta up">+5</td></tr><tr><th>Citation coverage <small>(%)</small></th><td><span class="muted">n/a</span></td><td>100&nbsp;%</td><td class="muted">&mdash;</td></tr><tr><th>Answer length <small>(words)</small></th><td>27&nbsp;words</td><td>284&nbsp;words</td><td class="delta ">+257&nbsp;words</td></tr><tr><th>Answer length <small>(chars)</small></th><td>196&nbsp;chars</td><td>2,189&nbsp;chars</td><td class="delta ">+1,993&nbsp;chars</td></tr><tr><th>Quality (proxy) <small>(/10)</small></th><td>5.40&nbsp;/10</td><td class="win">10&nbsp;/10</td><td class="delta up">+4.60&nbsp;/10</td></tr><tr><th>Errors</th><td>0</td><td>0</td><td class="delta ">0</td></tr><tr><th>Failed</th><td>no</td><td>no</td><td class="delta ">no</td></tr></tbody></table><section class="run"><h2>single_agent</h2><h4>Route</h4><div class="flow"><span class="chip" style="--c:#8b5cf6">baseline</span></div><h4>Trace timeline</h4><ol class="timeline"><li style="--c:#10b981"><span class="dot"></span><div><strong>writer</strong><div class="payload">input_tokens=27, output_tokens=27, cost_usd=2e-05, mode=single_agent</div></div></li></ol><details><summary>Final answer</summary><pre>[offline:You are a research assistant. Research, analyze, and write a cited answer in one pass.]
+Query: Research GraphRAG state-of-the-art and write a 500-word summary
+Audience: technical learners</pre></details></section><section class="run"><h2>multi_agent</h2><h4>Route</h4><div class="flow"><span class="chip" style="--c:#0ea5e9">researcher</span><span class="arrow">&rarr;</span><span class="chip" style="--c:#f59e0b">analyst</span><span class="arrow">&rarr;</span><span class="chip" style="--c:#10b981">writer</span><span class="arrow">&rarr;</span><span class="chip" style="--c:#64748b">done</span></div><h4>Trace timeline</h4><ol class="timeline"><li style="--c:#6366f1"><span class="dot"></span><div><strong>supervisor</strong><div class="payload">route=researcher, iteration=1</div></div></li><li style="--c:#0ea5e9"><span class="dot"></span><div><strong>researcher</strong><div class="payload">input_tokens=153, output_tokens=153, cost_usd=0.000115, num_sources=5</div></div></li><li style="--c:#6366f1"><span class="dot"></span><div><strong>supervisor</strong><div class="payload">route=analyst, iteration=2</div></div></li><li style="--c:#f59e0b"><span class="dot"></span><div><strong>analyst</strong><div class="payload">input_tokens=185, output_tokens=185, cost_usd=0.000139</div></div></li><li style="--c:#6366f1"><span class="dot"></span><div><strong>supervisor</strong><div class="payload">route=writer, iteration=3</div></div></li><li style="--c:#10b981"><span class="dot"></span><div><strong>writer</strong><div class="payload">input_tokens=284, output_tokens=284, cost_usd=0.000213</div></div></li><li style="--c:#6366f1"><span class="dot"></span><div><strong>supervisor</strong><div class="payload">route=done, iteration=4</div></div></li></ol><details><summary>Final answer</summary><pre>[offline:You are a Writer. Synthesize a clear answer for the given audience using the analysis. Cite sources as [n] and end with a &#x27;Sources&#x27; list.]
+Query: Research GraphRAG state-of-the-art and write a 500-word summary
+Audience: technical learners
+Analysis:
+[offline:You are an Analyst. Extract key claims, compare viewpoints, and flag weak evidence. Keep the [n] citations from the research notes.]
+Query: Research GraphRAG state-of-the-art and write a 500-word summary
+Research notes:
+[offline:You are a Researcher. Summarize the sources into concise notes with [n] citations.]
+Query: Research GraphRAG state-of-the-art and write a 500-word summary
+Sources:
+[1] Source 1: Research GraphRAG state-of-the-art and write a 500 (https://example.org/research/1): Finding 1 relevant to &#x27;Research GraphRAG state-of-the-art and write a 500-word summary&#x27;. Evidence point 1.
+[2] Source 2: Research GraphRAG state-of-the-art and write a 500 (https://example.org/research/2): Finding 2 relevant to &#x27;Research GraphRAG state-of-the-art and write a 500-word summary&#x27;. Evidence point 2.
+[3] Source 3: Research GraphRAG state-of-the-art and write a 500 (https://example.org/research/3): Finding 3 relevant to &#x27;Research GraphRAG state-of-the-art and write a 500-word summary&#x27;. Evidence point 3.
+[4] Source 4: Research GraphRAG state-of-the-art and write a 500 (https://example.org/research/4): Finding 4 relevant to &#x27;Research GraphRAG state-of-the-art and write a 500-word summary&#x27;. Evidence point 4.
+[5] Source 5: Research GraphRAG state-of-the-art and write a 500 (https://example.org/research/5): Finding 5 relevant to &#x27;Research GraphRAG state-of-the-art and write a 500-word summary&#x27;. Evidence point 5.
+
+Sources:
+[1] Source 1: Research GraphRAG state-of-the-art and write a 500 - https://example.org/research/1
+[2] Source 2: Research GraphRAG state-of-the-art and write a 500 - https://example.org/research/2
+[3] Source 3: Research GraphRAG state-of-the-art and write a 500 - https://example.org/research/3
+[4] Source 4: Research GraphRAG state-of-the-art and write a 500 - https://example.org/research/4
+[5] Source 5: Research GraphRAG state-of-the-art and write a 500 - https://example.org/research/5</pre></details></section></div></body></html>

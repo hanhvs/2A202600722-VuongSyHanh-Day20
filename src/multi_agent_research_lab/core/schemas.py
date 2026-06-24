@@ -39,3 +39,5 @@ class BenchmarkMetrics(BaseModel):
     estimated_cost_usd: float | None = None
     quality_score: float | None = Field(default=None, ge=0, le=10)
     notes: str = ""
+    # Full per-run metric set keyed by metric id (see evaluation.benchmark).
+    details: dict[str, float | None] = Field(default_factory=dict)
